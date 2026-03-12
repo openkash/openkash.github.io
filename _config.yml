@@ -1,0 +1,12 @@
+title: Kash Labs
+description: Your tools. Your data. Your rules.
+url: "https://openkash.github.io"
+baseurl: ""
+
+markdown: kramdown
+permalink: pretty
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

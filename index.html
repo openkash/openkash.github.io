@@ -1,0 +1,148 @@
+---
+layout: default
+---
+
+<div class="container">
+
+  <header class="header">
+    <nav class="nav">
+      <span class="nav__name">kash</span>
+      <div class="nav__links">
+        <a href="https://github.com/openkash">GitHub</a>
+        <a href="https://onekash.org">onekash.org</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="intro">
+    <h1>Hello there!</h1>
+    <p>
+      I build open-source tools and apps. Below are some of these.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2 class="section__title">Developer Tools</h2>
+    <div class="project-grid">
+
+      <a class="card" href="https://github.com/openkash/sap-odata-explorer" data-repo="openkash/sap-odata-explorer">
+        <div class="card__header">
+          <div class="card__icon card__icon--tool">&#128269;</div>
+          <div class="card__name">sap-odata-explorer</div>
+        </div>
+        <p class="card__desc">Query SAP OData endpoints in plain English.</p>
+        <div class="card__meta">
+          <span class="tag tag--lang tag--ts">TypeScript</span>
+          <span class="tag">MIT</span>
+          <span class="tag tag--stars" hidden>&#9733; 0</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://github.com/openkash/tdd-skill" data-repo="openkash/tdd-skill">
+        <div class="card__header">
+          <div class="card__icon card__icon--tool">&#9989;</div>
+          <div class="card__name">tdd-skill</div>
+        </div>
+        <p class="card__desc">Structured TDD workflow for Claude Code. 6-phase process with quality checks.</p>
+        <div class="card__meta">
+          <span class="tag tag--lang tag--shell">Shell</span>
+          <span class="tag">Apache-2.0</span>
+          <span class="tag tag--stars" hidden>&#9733; 0</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://github.com/icloud-calendar-mcp/icloud-calendar-mcp" data-repo="icloud-calendar-mcp/icloud-calendar-mcp">
+        <div class="card__header">
+          <div class="card__icon card__icon--tool">&#9729;</div>
+          <div class="card__name">iCloud Calendar MCP</div>
+        </div>
+        <p class="card__desc">MCP server for iCloud Calendar. CLI-based calendar access.</p>
+        <div class="card__meta">
+          <span class="tag tag--lang tag--python">Python</span>
+          <span class="tag tag--stars" hidden>&#9733; 0</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://github.com/iCalDAV/iCalDAV" data-repo="iCalDAV/iCalDAV">
+        <div class="card__header">
+          <div class="card__icon card__icon--tool">&#128260;</div>
+          <div class="card__name">iCalDAV</div>
+        </div>
+        <p class="card__desc">Kotlin CalDAV client with offline support and conflict resolution.</p>
+        <div class="card__meta">
+          <span class="tag tag--lang tag--kotlin">Kotlin</span>
+          <span class="tag tag--stars" hidden>&#9733; 0</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section__title">Apps</h2>
+    <div class="project-grid">
+
+      <a class="card" href="https://github.com/KashCal/KashCal" data-repo="KashCal/KashCal">
+        <div class="card__header">
+          <div class="card__icon card__icon--app">&#128197;</div>
+          <div class="card__name">KashCal</div>
+        </div>
+        <p class="card__desc">Offline-capable calendar with iCloud sync. Your schedule stays on your device.</p>
+        <div class="card__meta">
+          <span class="tag tag--lang tag--kotlin">Kotlin</span>
+          <span class="tag tag--stars" hidden>&#9733; 0</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://github.com/KashCal/KashCake" data-repo="KashCal/KashCake">
+        <div class="card__header">
+          <div class="card__icon card__icon--app">&#127874;</div>
+          <div class="card__name">KashCake</div>
+        </div>
+        <p class="card__desc">Birthday reminders from your contacts. Never miss a celebration.</p>
+        <div class="card__meta">
+          <span class="tag tag--lang tag--kotlin">Kotlin</span>
+          <span class="tag tag--stars" hidden>&#9733; 0</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>
+      <a href="https://github.com/openkash">GitHub</a>
+      &middot;
+      <a href="https://onekash.org">onekash.org</a>
+    </p>
+  </footer>
+
+</div>
+
+<script>
+document.querySelectorAll('.card[data-repo]').forEach(function(card) {
+  var repo = card.getAttribute('data-repo');
+  fetch('https://api.github.com/repos/' + repo)
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.description) {
+        card.querySelector('.card__desc').textContent = data.description;
+      }
+      if (data.owner && data.owner.avatar_url) {
+        var icon = card.querySelector('.card__icon');
+        var img = document.createElement('img');
+        img.src = data.owner.avatar_url + '&s=72';
+        img.alt = data.owner.login;
+        img.className = 'card__avatar';
+        icon.textContent = '';
+        icon.appendChild(img);
+      }
+      if (typeof data.stargazers_count === 'number' && data.stargazers_count > 0) {
+        var starTag = card.querySelector('.tag--stars');
+        starTag.textContent = '\u2605 ' + data.stargazers_count;
+        starTag.hidden = false;
+      }
+    })
+    .catch(function() {});
+});
+</script>

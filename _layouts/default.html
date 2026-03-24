@@ -12,12 +12,14 @@
   <meta property="og:url" content="{{ site.url }}/">
   <meta property="og:title" content="{{ site.title }}">
   <meta property="og:description" content="{{ site.description }}">
+  <meta property="og:image" content="https://onekash.org/images/logo.png">
   <meta property="og:site_name" content="OneKash Labs">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{{ site.title }}">
   <meta name="twitter:description" content="{{ site.description }}">
+  <meta name="twitter:image" content="https://onekash.org/images/logo.png">
 
   <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
@@ -27,11 +29,66 @@
     "@type": "CollectionPage",
     "name": "OneKash Labs — Open Source Projects",
     "url": "https://openkash.github.io",
+    "description": "Open-source developer tools and apps by OneKash Labs.",
     "creator": {
       "@type": "Organization",
       "name": "OneKash Labs",
       "url": "https://onekash.org"
-    }
+    },
+    "hasPart": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "KashCal",
+        "url": "https://kashcal.github.io",
+        "operatingSystem": "Android",
+        "applicationCategory": "UtilitiesApplication",
+        "description": "Offline-capable calendar with iCloud sync. Your schedule stays on your device.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "KashCake",
+        "operatingSystem": "Android",
+        "applicationCategory": "UtilitiesApplication",
+        "description": "Birthday reminders from your contacts. Never miss a celebration.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "iCalDAV",
+        "url": "https://icaldav.github.io",
+        "codeRepository": "https://github.com/iCalDAV/iCalDAV",
+        "programmingLanguage": "Kotlin",
+        "description": "Kotlin CalDAV client with offline sync and conflict resolution."
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "iCloud Calendar MCP Server",
+        "codeRepository": "https://github.com/icloud-calendar-mcp/icloud-calendar-mcp",
+        "programmingLanguage": "Python",
+        "description": "MCP server for iCloud Calendar. CLI-based calendar access for AI agents."
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "SAP OData Explorer",
+        "codeRepository": "https://github.com/openkash/sap-odata-explorer",
+        "programmingLanguage": "TypeScript",
+        "description": "Query SAP OData endpoints in plain English."
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "AI Agent TDD Skill",
+        "codeRepository": "https://github.com/openkash/ai-agent-tdd-skill",
+        "description": "TDD skill for Claude Code. Explore, plan, test-first implement, verify."
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "SAP ATC Checker",
+        "codeRepository": "https://github.com/openkash/sap-atc-checker",
+        "programmingLanguage": "TypeScript",
+        "description": "Run SAP ATC checks with any check variant via ADT API."
+      }
+    ]
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">

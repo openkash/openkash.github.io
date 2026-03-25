@@ -35,8 +35,10 @@ a:hover { text-decoration: underline; }
 /* Intro */
 .intro { padding: 64px 0 48px; }
 
-.intro p {
-  font-size: 1.1rem; color: var(--text-secondary);
+.intro { text-align: center; }
+
+.intro h1 {
+  font-size: 1.1rem; font-weight: 400; color: var(--text-secondary);
   line-height: 1.7;
 }
 

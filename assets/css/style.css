@@ -35,11 +35,11 @@ a:hover { text-decoration: underline; }
 /* Intro */
 .intro { padding: 64px 0 48px; }
 
-.intro { text-align: center; }
+.intro { text-align: center; padding: 48px 0 32px; }
 
 .intro h1 {
-  font-size: 1.1rem; font-weight: 400; color: var(--text-secondary);
-  line-height: 1.7;
+  font-size: 0.95rem; font-weight: 400; color: var(--text-muted);
+  line-height: 1.5;
 }
 
 /* Sections */

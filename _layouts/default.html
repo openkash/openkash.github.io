@@ -102,6 +102,35 @@
         "codeRepository": "https://github.com/openkash/sap-atc-checker",
         "programmingLanguage": "TypeScript",
         "description": "Run SAP ATC checks with any check variant via ADT API."
+      },
+      {
+        "@type": "Dataset",
+        "name": "RFC 5545 VEVENT Property Dependency Graph",
+        "description": "Formal dependency graph for RFC 5545 VEVENT properties — 27 properties, 20 edges, merge-safety classifications.",
+        "url": "https://doi.org/10.5281/zenodo.19299690",
+        "sameAs": "https://github.com/iCalDAV/ical-dependency-graph",
+        "subjectOf": {
+          "@type": "ScholarlyArticle",
+          "name": "iCalendar Property Dependencies",
+          "url": "https://datatracker.ietf.org/doc/draft-kashyap-calext-ical-property-deps/"
+        },
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "creator": {
+          "@type": "Person",
+          "name": "Ravi Kashyap"
+        },
+        "distribution": [
+          {
+            "@type": "DataDownload",
+            "encodingFormat": "application/x-yaml",
+            "contentUrl": "https://raw.githubusercontent.com/iCalDAV/ical-dependency-graph/main/rfc5545-deps.yaml"
+          },
+          {
+            "@type": "DataDownload",
+            "encodingFormat": "application/json",
+            "contentUrl": "https://raw.githubusercontent.com/iCalDAV/ical-dependency-graph/main/rfc5545-deps.json"
+          }
+        ]
       }
     ]
   }

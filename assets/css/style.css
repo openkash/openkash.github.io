@@ -58,7 +58,7 @@ a:hover { text-decoration: underline; }
   gap: 16px;
 }
 
-.project-grid--single { max-width: 420px; margin: 0 auto; }
+.project-grid--single { max-width: 480px; margin: 0 auto; }
 
 .card {
   background: var(--bg-card); border: 1px solid var(--border-color);
@@ -118,7 +118,15 @@ a:hover { text-decoration: underline; }
 
 .tag--doi { color: #3b82f6; border-color: rgba(59, 130, 246, 0.25); text-decoration: none; }
 .tag--doi:hover { background: rgba(59, 130, 246, 0.1); text-decoration: none; }
-.tag--ietf { color: #f97316; border-color: rgba(249, 115, 22, 0.25); }
+.tag--ietf { color: #f97316; border-color: rgba(249, 115, 22, 0.25); text-decoration: none; }
+.tag--ietf:hover { background: rgba(249, 115, 22, 0.1); text-decoration: none; }
+.tag--source { color: var(--text-secondary); text-decoration: none; }
+.tag--source:hover { background: rgba(255, 255, 255, 0.05); text-decoration: none; }
+
+.card--featured { border-color: rgba(251, 191, 36, 0.15); }
+.card--featured:hover { border-color: rgba(251, 191, 36, 0.3); }
+.card__name a { color: inherit; text-decoration: none; }
+.card__name a:hover { color: var(--accent); text-decoration: none; }
 
 /* Footer */
 .footer {
